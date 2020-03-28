@@ -9,6 +9,12 @@ import java.util.List;
         name = "Employee.retrieveEmployeesByName",
         query = "FROM Employee WHERE lastname = :LASTNAME"
 )
+
+@NamedQuery(
+        name = "Employee.retrieveEmployeesByAnyThreeLettersOfLastname",
+        query = "FROM Employee WHERE lastname LIKE :ANY_THREE_LETTERS"
+)
+
 @Entity
 @Table(name = "EMPLOYEES")
 public class Employee {

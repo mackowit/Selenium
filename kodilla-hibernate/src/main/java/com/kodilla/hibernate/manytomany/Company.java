@@ -11,6 +11,11 @@ import java.util.List;
         resultClass = Company.class
 )
 
+@NamedQuery(
+        name = "Company.retrieveCompaniesByAnyThreeLettersOfName",
+        query = "FROM Company WHERE name LIKE :ANY_THREE_LETTERS"
+)
+
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
